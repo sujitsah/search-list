@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>filtetrable</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+</head>
+<body>
+<div class="container">
+	<h1 class="center-align">
+		my contacts
+	</h1>
+	<input type="text" id="filterInput" placeholder="search name">
+	<ul class="collection with-header" id="names" >
+		<li class="collection-header">
+			<h5>A</h5>
+		</li>
+		<li class="collection-item">
+			<a href="#">abey</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">abedfsf</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">afsf</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">awe</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">abe</a>
+		</li>
+
+
+
+		<li class="collection-header">
+			<h5>B</h5>
+		</li>
+		<li class="collection-item">
+			<a href="#">abey</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">abedfsf</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">afsf</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">awe</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">abe</a>
+		</li>
+
+
+
+		<li class="collection-header">
+			<h5>C</h5>
+		</li>
+		<li class="collection-item">
+			<a href="#">abey</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">abedfsf</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">afsf</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">awe</a>
+		</li>
+		<li class="collection-item">
+			<a href="#">abe</a>
+		</li>
+	</ul>
+</div>
+<script>
+	
+var filterInput = document.getElementById('filterInput');
+filterInput.addEventListener('keyup', filterNames);
+
+
+
+function filterNames(){
+ var filterValue = document.getElementById('filterInput').value.toUpperCase();
+
+
+
+
+//get names ul
+
+
+var ul = document.getElementById('names');
+
+//get items
+
+var li = ul.querySelectorAll('li.collection-item');
+
+for (var i =0; i < li.length; i++) {
+	var a = li[i].getElementsByTagName('a')[0];
+
+	
+	//if match
+	if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1)
+	{
+		li[i].style.display='';
+
+	}
+	else{
+		li[i].style.display='none';
+
+	}
+}
+
+}
+</script>
+</body>
+</html>
+
+
+
+
